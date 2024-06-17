@@ -58,7 +58,7 @@ def imprimirPlanilla():
                 if trabajador['cargo']==cargo:
                     cargo.write(f"Nombre: {trabajador['nombre']}, Cargo: {trabajador['cargo']}, Sueldo Bruto: {trabajador['sueldo_bruto']}, Desc. Salud: {trabajador['desc_salud']}, Desc. AFP: {trabajador['desc_afp']}, Líquido a Pagar: {trabajador['liquido_pagar']}\n")
                     print(f"Planilla de sueldos para el cargo {cargo} generada exitosamente.\n")
-
+                    return;
 
 
 
