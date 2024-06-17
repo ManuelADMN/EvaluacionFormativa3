@@ -65,3 +65,28 @@ def imprimirPlanilla(trabajadores):
 
 
 
+def ayuda(trabajadores):
+
+    if not trabajadores:
+        print("No se encuentran trabajadores")
+        return
+
+    print("\n¿De quién desea imprimir planilla?")
+    decision_planilla = input("\n1.- CEO\n2.- Desarrollador\n3.- Analista\nIngrese su decisión:  ")
+
+    if decision_planilla == '1':
+        cargo = 'CEO'
+    elif decision_planilla == '2':
+        cargo = 'Desarrollador'
+    elif decision_planilla == '3':
+        cargo = 'Analista'
+    else:
+        print("Decisión no válida")
+        return
+
+    with open(f"Planilla_Trabajadores_{cargo}.txt", 'w') as planilla_trabajadores:
+        for trabajador in trabajadores:
+            if trabajador['cargo'] == cargo:
+                planilla_trabajadores.write(f"Nombre: {trabajador['nombre']}, Cargo: {trabajador['cargo']}, Sueldo Bruto: {trabajador['sueldo_bruto']}, Desc. Salud: {trabajador['desc_salud']}, Desc. AFP: {trabajador['desc_afp']}, Líquido a Pagar: {trabajador['liquido_pagar']}\n")
+    
+    print(f"Planilla de sueldos para el cargo {cargo} generada exitosamente.\n")
