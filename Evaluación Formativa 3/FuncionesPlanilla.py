@@ -1,6 +1,7 @@
 ###Funciones Planilla
 import csv
 trabajadores=[];
+nombreTrabajadores = [];
 
 def registrarTrabajador():
     try: 
@@ -28,7 +29,8 @@ def registrarTrabajador():
                     descSalud=sueldoBruto*0.06
                     descAfp=sueldoBruto*0.11  
 
-    liquidoPagar=(sueldoBruto-descSalud-descAfp);            
+    nombreTrabajadores.append(nombre);
+    liquidoPagar=(sueldoBruto-descSalud-descAfp);
 
     trabajador = {
     'nombre': nombre,
