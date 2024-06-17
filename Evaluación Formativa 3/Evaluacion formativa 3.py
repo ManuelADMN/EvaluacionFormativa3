@@ -21,7 +21,7 @@ while True:
         elif (menuDecision == 2):
             lista
         elif (menuDecision == 3):
-            imprimir
+            func.imprimirPlanilla();
             print ("Imprimiendo...");
             time.sleep(2);
         elif (menuDecision == 4):

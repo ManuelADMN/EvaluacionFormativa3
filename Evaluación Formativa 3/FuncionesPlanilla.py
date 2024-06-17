@@ -1,7 +1,6 @@
 ###Funciones Planilla
 import csv
 trabajadores=[];
-nombreTrabajadores = [];
 
 def registrarTrabajador():
     try: 
@@ -29,8 +28,7 @@ def registrarTrabajador():
                     descSalud=sueldoBruto*0.06
                     descAfp=sueldoBruto*0.11  
 
-    nombreTrabajadores.append(nombre);
-    liquidoPagar=(sueldoBruto-descSalud-descAfp);
+    liquidoPagar=(sueldoBruto-descSalud-descAfp);            
 
     trabajador = {
     'nombre': nombre,
@@ -44,6 +42,22 @@ def registrarTrabajador():
     print("Trabajador registrado exitosamente.\n")
     print(trabajadores)
     
+
+
+def imprimirPlanilla():
+    if not trabajadores:
+        print("No se encuentran trabajadores");
+
+    print=("\n¿De quién desea imprimir plantilla?");
+    decisionPlanilla=input("\n1.- CEO\n2.- Desarrollador\n3.- Analista\nIngrese su decision:  ");
+
+    if(decisionPlanilla==1):
+        cargo='CEO'
+        with open(f"Planilla_Trabajadores{cargo}.txt,'w'"):
+            for trabajador in trabajadores:
+                if trabajador['cargo']==cargo:
+                    cargo.write(f"Nombre: {trabajador['nombre']}, Cargo: {trabajador['cargo']}, Sueldo Bruto: {trabajador['sueldo_bruto']}, Desc. Salud: {trabajador['desc_salud']}, Desc. AFP: {trabajador['desc_afp']}, Líquido a Pagar: {trabajador['liquido_pagar']}\n")
+                    print(f"Planilla de sueldos para el cargo {cargo} generada exitosamente.\n")
 
 
 
