@@ -23,7 +23,7 @@ while True:
         elif (menuDecision == 3):
             print ("Imprimiendo...");
             time.sleep(2);            
-            print(func.imprimirPlanilla(trabajadores));            
+            print(func.imprimirPlanilla());            
             
 
         elif (menuDecision == 4):
