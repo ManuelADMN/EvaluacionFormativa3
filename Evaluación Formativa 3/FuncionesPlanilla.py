@@ -43,6 +43,10 @@ def registrarTrabajador():
     print(trabajadores)
     return;
     
+def mostrarlista():
+    print(trabajadores);
+
+
 
 def imprimirPlanilla():
     if not trabajadores:
@@ -80,26 +84,6 @@ def imprimirPlanilla():
 
 
 
-
-"""def imprimirPlanilla():
-    if not trabajadores:
-        print("No se encuentran trabajadores");
-        return;
-    print=("\n¿De quién desea imprimir plantilla?");
-    decisionPlanilla=input("\n1.- CEO\n2.- Desarrollador\n3.- Analista\nIngrese su decision:  ");
-
-    if(decisionPlanilla==1):
-        cargo='CEO'
-
-    
-    with open(f"Planilla_Trabajadores{cargo}.txt,'w'") as planilla_trabajadores:
-        for trabajador in trabajadores:
-            #if trabajador['cargo']==cargo:
-                planilla_trabajadores.write(f"Nombre: {trabajador['nombre']}, Cargo: {trabajador['cargo']}, Sueldo Bruto: {trabajador['sueldo_bruto']}, Desc. Salud: {trabajador['desc_salud']}, Desc. AFP: {trabajador['desc_afp']}, Líquido a Pagar: {trabajador['liquido_pagar']}\n");
-                contenido = planilla_trabajadores.read();
-                print(contenido);
-    
-    print(f"Planilla de sueldos para el cargo {cargo} generada exitosamente.\n")"""
 
 
 

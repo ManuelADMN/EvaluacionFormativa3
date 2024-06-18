@@ -23,7 +23,6 @@ while True:
             print(trabajadores)
         elif (menuDecision == 3):       
             func.imprimirPlanilla();
-            print(trabajadores)
         elif (menuDecision == 4):
             print ("Saliendo...");
             time.sleep(2);
