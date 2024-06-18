@@ -29,3 +29,5 @@ while True:
             break;
         else:
             print("Opción Inválida. Intenta nuevamente.");
+
+#Trabajo hecho por: Manuel Díaz, Guillermo Cerda, Samuel Perez
