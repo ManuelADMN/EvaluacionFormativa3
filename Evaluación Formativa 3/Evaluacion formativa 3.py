@@ -16,15 +16,13 @@ while True:
         print("Opción Inválida. Intenta nuevamente.");
     else:
         if (menuDecision == 1):
-            func.registrarTrabajador();
+            trabajadores.append(func.registrarTrabajador());
         elif (menuDecision == 2):
             lista
         elif (menuDecision == 3):
             print ("Imprimiendo...");
             time.sleep(2);            
-            func.imprimirPlanilla(trabajadores);
-            
-
+            print(func.imprimirPlanilla(trabajadores));
         elif (menuDecision == 4):
             print ("Saliendo...");
             time.sleep(2);
