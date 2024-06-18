@@ -1,7 +1,6 @@
 ###Funciones Planilla
 import csv
 trabajadores=[];
-nombreTrabajadores = [];
 
 def registrarTrabajador():
     try: 
@@ -15,7 +14,7 @@ def registrarTrabajador():
             print("Ingresar el cargo es obligatorio");
         else:
             try: 
-                sueldoBruto=float(input("Ingrese el sueldo del trabajador:  "));
+                sueldoBruto=int(input("Ingrese el sueldo del trabajador:  "));
             except ValueError:
                 print("Ingresar el sueldo es obligatorio");
             else:
@@ -29,7 +28,6 @@ def registrarTrabajador():
                     descSalud=sueldoBruto*0.06
                     descAfp=sueldoBruto*0.11  
 
-    nombreTrabajadores.append(nombre);
     liquidoPagar=(sueldoBruto-descSalud-descAfp);            
 
     trabajador = {
@@ -43,24 +41,65 @@ def registrarTrabajador():
     trabajadores.append(trabajador)
     print("Trabajador registrado exitosamente.\n")
     print(trabajadores)
+    return;
     
 
+def imprimirPlanilla():
+    if not trabajadores:
+        print("No se encuentran trabajadores registrados.")
+        return
+    
+    print("\n¿De quién desea imprimir la planilla?")
+    decisionPlanilla = input("\n1.- CEO\n2.- Desarrollador\n3.- Analista\nIngrese su decisión: ")
 
-def imprimirPlanilla(trabajadores):
+    if decisionPlanilla == '1':
+        cargo = 'CEO'
+    elif decisionPlanilla == '2':
+        cargo = 'Desarrollador'
+    elif decisionPlanilla == '3':
+        cargo = 'Analista'
+    else:
+        print("Opción no válida")
+        return
 
-    decisionPlanilla = int(input("\n¿De quién desea imprimir plantilla?\n\n1.- CEO\n2.- Desarrollador\n3.- Analista\nIngrese su decision:  "));
+    with open(f"Planilla_Trabajadores_{cargo}.txt", 'w') as planilla_trabajadores:
+        for trabajador in trabajadores:
+            if trabajador['cargo'] == cargo:
+                planilla_trabajadores.write(f"Nombre: {trabajador['nombre']}, Cargo: {trabajador['cargo']}, Sueldo Bruto: {trabajador['sueldoBruto']}, Desc. Salud: {trabajador['descSalud']}, Desc. AFP: {trabajador['descAfp']}, Líquido a Pagar: {trabajador['liquidoPagar']}\n")
+                print(f"Planilla de sueldos para el cargo {cargo} generada exitosamente.")
+    
+    print(f"\nContenido de la planilla para el cargo {cargo}:\n")
+    try:
+        with open(f"Planilla_Trabajadores_{cargo}.txt", 'r') as planilla_trabajadores:
+            contenido = planilla_trabajadores.read()
+            print(contenido)
+    except FileNotFoundError:
+        print(f"No se encontró la planilla para el cargo {cargo}. Verifique que haya sido generada previamente.")
 
-    if(decisionPlanilla == 1):
+
+
+
+
+
+"""def imprimirPlanilla():
+    if not trabajadores:
+        print("No se encuentran trabajadores");
+        return;
+    print=("\n¿De quién desea imprimir plantilla?");
+    decisionPlanilla=input("\n1.- CEO\n2.- Desarrollador\n3.- Analista\nIngrese su decision:  ");
+
+    if(decisionPlanilla==1):
         cargo='CEO'
-        with open(f'Planilla_Trabajadores{cargo}.txt','w') as planilla_trabajadores:
-            for trabajador in trabajadores:
-                if trabajadores['cargo'] == cargo:
-                    planilla_trabajadores.write(f"Nombre: {trabajador['nombre']}, Cargo: {trabajador['cargo']}, Sueldo Bruto: {trabajador['sueldo_bruto']}, Desc. Salud: {trabajador['desc_salud']}, Desc. AFP: {trabajador['desc_afp']}, Líquido a Pagar: {trabajador['liquido_pagar']}\n")
-                    print(f"Planilla de sueldos para el cargo {cargo} generada exitosamente.\n")
-                    return;
-                else:
-                    print("Decision no valida");
-                    return;
+
+    
+    with open(f"Planilla_Trabajadores{cargo}.txt,'w'") as planilla_trabajadores:
+        for trabajador in trabajadores:
+            #if trabajador['cargo']==cargo:
+                planilla_trabajadores.write(f"Nombre: {trabajador['nombre']}, Cargo: {trabajador['cargo']}, Sueldo Bruto: {trabajador['sueldo_bruto']}, Desc. Salud: {trabajador['desc_salud']}, Desc. AFP: {trabajador['desc_afp']}, Líquido a Pagar: {trabajador['liquido_pagar']}\n");
+                contenido = planilla_trabajadores.read();
+                print(contenido);
+    
+    print(f"Planilla de sueldos para el cargo {cargo} generada exitosamente.\n")"""
 
 
 
