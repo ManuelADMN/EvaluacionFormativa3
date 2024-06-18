@@ -1,7 +1,7 @@
 ###Empresa DUOC
 import FuncionesPlanilla as func
 import time
-
+trabajadores=[];
 
 while True:
     print("\nBienvenido a DUOC Empresa\n\nElija una opción:  ");
@@ -16,14 +16,13 @@ while True:
         print("Opción Inválida. Intenta nuevamente.");
     else:
         if (menuDecision == 1):
-            trabajadores=[];
             func.registrarTrabajador();
         elif (menuDecision == 2):
             lista
         elif (menuDecision == 3):
             print ("Imprimiendo...");
             time.sleep(2);            
-            print(func.imprimirPlanilla());            
+            func.imprimirPlanilla(trabajadores);
             
 
         elif (menuDecision == 4):
