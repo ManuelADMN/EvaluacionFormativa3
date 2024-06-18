@@ -40,12 +40,16 @@ def registrarTrabajador():
     }
     trabajadores.append(trabajador)
     print("Trabajador registrado exitosamente.\n")
-    print(trabajadores)
     return;
     
 def mostrarlista():
-    for trabajador in trabajadores:
-        print(f"Trabajador: {nombre} Cargo: {cargo}");
+    if not trabajadores:
+        print("No se encuentran trabajadores registrados.")
+    else:
+        print("Listado de trabajadores:")
+        for trabajador in trabajadores:
+            print(f"Nombre: {trabajador['nombre']}, Cargo: {trabajador['cargo']}, Sueldo Bruto: {trabajador['sueldoBruto']},Descuento AFP: {trabajador['descAfp']}, Descuento salud: {trabajador['descSalud']} Líquido a Pagar: {trabajador['liquidoPagar']}")
+        print() 
 
 
 
@@ -84,7 +88,7 @@ def imprimirPlanilla():
 
 
 
-
+####Trabajo hecho por: Manuel Díaz, Guillermo Cerda y Samuel Perez.
 
 
 
