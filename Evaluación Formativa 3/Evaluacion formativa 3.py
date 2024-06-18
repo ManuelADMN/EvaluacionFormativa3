@@ -18,7 +18,7 @@ while True:
     else:
         if (menuDecision == 1):
             func.registrarTrabajador();
-            trabajadores.append(trabajadores)
+            trabajadores.append(trabajadores);
         elif (menuDecision == 2):
             func.mostrarlista();
         elif (menuDecision == 3):       

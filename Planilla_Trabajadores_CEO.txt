@@ -1,0 +1,1 @@
+Nombre: asdasdsadsa, Cargo: CEO, Sueldo Bruto: 100000000, Desc. Salud: 7000000.000000001, Desc. AFP: 12000000.0, Líquido a Pagar: 81000000.0
