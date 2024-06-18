@@ -20,7 +20,7 @@ while True:
             func.registrarTrabajador();
             trabajadores.append(trabajadores)
         elif (menuDecision == 2):
-            print(trabajadores)
+            func.mostrarlista();
         elif (menuDecision == 3):       
             func.imprimirPlanilla();
         elif (menuDecision == 4):
