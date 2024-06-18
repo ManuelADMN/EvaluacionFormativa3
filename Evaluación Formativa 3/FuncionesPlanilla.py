@@ -44,7 +44,8 @@ def registrarTrabajador():
     return;
     
 def mostrarlista():
-    print(f"Trabajador: {nombre} Cargo");
+    for trabajador in trabajadores:
+        print(f"Trabajador: {nombre} Cargo: {cargo}");
 
 
 
